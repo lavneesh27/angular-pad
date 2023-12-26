@@ -1,0 +1,26 @@
+.container{
+    width: 430px;
+    height: 844px;
+    background-color: rgb(240, 240, 240);
+    position: relative;
+}
+.body{
+    height: 790px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.add{
+    border-radius: 999px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(100, 100, 100);
+    color: white;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    border: none;
+}

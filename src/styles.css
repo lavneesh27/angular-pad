@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+/* body{
+    width: 1080px;
+    height: 2412px;
+    background-color: aqua;
+} */
+
+/* @media screen and (max-width: 430px) and (max-height: 844px) {
+  body {
+    max-width: 430px;
+    max-height: 844px;
+    margin: 0 auto;
+  }
+} */
+
+body {
+  width: 430px !important;
+  height: 844px !important;
+  margin: 0 auto;
+}
