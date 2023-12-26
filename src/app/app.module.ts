@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
@@ -16,7 +16,8 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { CreateComponent } from './components/create/create.component'
+import { CreateComponent } from './components/create/create.component';
+import { NavComponent } from './components/nav/nav.component'
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -54,7 +55,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     RegisterComponent,
     HomeComponent,
     LoginComponent,
-    CreateComponent
+    CreateComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +74,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     AngularFireModule.initializeApp(environment.firebase),
     FirestoreModule,
     CommonModule,
+    RouterModule,
     HttpClientJsonpModule
   ],
   providers: [],

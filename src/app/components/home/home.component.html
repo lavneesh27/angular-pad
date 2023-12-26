@@ -1,11 +1,19 @@
 <div class="container px-0">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
-        <div class="container-fluid d-flex justify-content-center">
-          <a class="navbar-brand" href=javascript:void(0)>Angular Pad</a>
+  <div class="mx-2">
+    <input type="text" class="form-control my-3" id="note" name="note" placeholder="Search your notes" [(ngModel)]="searchNote"
+    (ngModelChange)="filter(searchNote)">
+  </div>
+  
+  <div class="body p-2">
+    <p *ngIf="notes && notes.length==0" class="text-muted text-center my-auto">You don't have any notes</p>
+    <ng-container *ngIf="notes && notes.length">
+      <div class="notes">
+        <div *ngFor="let note of notes" class="note"  [routerLink]="['/create', note.id]">
+          <div *ngIf="note.title && note.title.length" class="fs-5 fw-bold">{{note.title}}</div>
+          <p>{{note.content}}</p>
         </div>
-      </nav>
-    <div class="body">
-        <p class="text-muted text-center my-auto">You don't have any notes</p>
-    </div>
+      </div>
+    </ng-container>
     <button class="btn add shadow" routerLink="/create"><i class='bx bx-plus fs-2'></i></button>
+  </div>
 </div>

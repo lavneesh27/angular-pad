@@ -1,11 +1,12 @@
 export const environment = {
     firebase: {
-      apiKey: 'AIzaSyAOLkKeYpgzdmTMd4kUbxZazwIdDdwtA_g',
-      authDomain: 'student-management-7ad68.firebaseapp.com',
-      projectId: 'student-management-7ad68',
-      storageBucket: 'student-management-7ad68.appspot.com',
-      messagingSenderId: '452723513360',
-      appId: '1:452723513360:web:b1c89436181e7fe209d295',
+      apiKey: "AIzaSyBbzxFJoJE2La16jf0DSPfb_yURJxA51Uk",
+      authDomain: "angular-pad.firebaseapp.com",
+      projectId: "angular-pad",
+      storageBucket: "angular-pad.appspot.com",
+      messagingSenderId: "101754541444",
+      appId: "1:101754541444:web:05c7d7956e09413747b9d1",
+      measurementId: "G-D38WEY2P29"
     },
     production: true,
   };

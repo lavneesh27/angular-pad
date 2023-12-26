@@ -8,13 +8,13 @@ export class DataService {
   constructor(private afs: AngularFirestore) {}
 
   //tweet
-  addTweet(tweet: any) {
-    tweet.createdAt = new Date().toLocaleString();
-    tweet.id = this.afs.createId();
-    return this.afs.collection('/Tweets').doc(tweet.id).set(tweet);
+  addNote(note: any) {
+    note.createdAt = new Date().toLocaleString();
+    note.id = this.afs.createId();
+    return this.afs.collection('/Notes').doc(note.id).set(note);
   }
-  getAllTweets() {
-    return this.afs.collection('/Tweets').snapshotChanges();
+  getAllNotes() {
+    return this.afs.collection('/Notes').snapshotChanges();
   }
   likeTweet(tweet: any, userId: string) {
     const postRef = this.afs.collection('/Tweets').doc(tweet.id).ref;
@@ -49,9 +49,9 @@ export class DataService {
     });
   }
 
-  async getTweet(id: string): Promise<any> {
+  async getNote(id: string): Promise<any> {
     try {
-      const doc = await this.afs.collection('/Tweets').doc(id).ref.get();
+      const doc = await this.afs.collection('/Notes').doc(id).ref.get();
 
       if (doc.exists) {
         return doc.data();
