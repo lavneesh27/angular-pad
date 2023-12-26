@@ -1,5 +1,5 @@
 router-outlet {
   width: 430px !important;
-  height: 844px !important;
+  height: 100vh !important;
   margin: 0 auto;
 }

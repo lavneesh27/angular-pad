@@ -1,11 +1,11 @@
 .container{
     width: 430px;
-    height: 844px;
+    height: 100vh;
     background-color: rgb(240, 240, 240);
     position: relative;
 }
 .body{
-    height: 790px;
+    height: calc(100vh - 50px);
     display: flex;
     align-items: center;
     justify-content: center;
