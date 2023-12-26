@@ -16,8 +16,8 @@ export class DataService {
   getAllNotes() {
     return this.afs.collection('/Notes').snapshotChanges();
   }
-  likeTweet(tweet: any, userId: string) {
-    const postRef = this.afs.collection('/Tweets').doc(tweet.id).ref;
+  updateNote(note: any) {
+    const postRef = this.afs.collection('/Notes').doc(note.id).ref;
 
     return this.afs.firestore.runTransaction(async (transaction) => {
       const postDoc = await transaction.get(postRef);
@@ -26,10 +26,12 @@ export class DataService {
         throw new Error('Post does not exist!');
       }
 
-      const likes = postDoc.get('likes') || [];
-      likes.push(userId);
+      let title = postDoc.get('title') || "";
+      let desc = postDoc.get('desc') || "";
+      title = note.title;
+      desc = note.desc||"";
 
-      transaction.update(postRef, { likes });
+      transaction.update(postRef, { title, desc });
     });
   }
   unlikeTweet(tweet: any, userId: string) {

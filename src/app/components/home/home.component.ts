@@ -29,10 +29,9 @@ export class HomeComponent implements OnInit {
           alert('Error while fetching notes');
         }
       );
-      console.log(this.notes);
 
       this.notes.sort((a: any, b: any) =>
-        new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1
+        new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1
       );
     });
   }

@@ -4,7 +4,7 @@
   background-color: white;
 }
 .body {
-    position: relative;
+  position: relative;
   height: calc(100vh - 50px);
   display: flex;
   align-items: start;
@@ -19,9 +19,9 @@
   align-items: center;
   background-color: rgb(100, 100, 100);
   color: white;
-  position: absolute;
+  position: fixed;
   bottom: 30px;
-  right: 30px;
+  right: 520px;
   border: none;
 }
 .add:hover,
@@ -40,11 +40,11 @@
   font-weight: bold;
   font-size: 25px;
 }
-#desc{
-    height: 500px;
-    background: transparent;
-    border: none;
-    width: 350px;
+#desc {
+  height: 500px;
+  background: transparent;
+  border: none;
+  width: 350px;
 }
 #title,
 #desc:focus {

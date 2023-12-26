@@ -1,10 +1,12 @@
 <div class="container px-0">
     <div>
-        <form class="body form p-3 d-flex flex-column align-items-center justify-content-start" (ngSubmit)="addNote()">
-          <input  id="title" type="text" class="mb-3" name="title" placeholder="Title" [(ngModel)]="note.title">
-          <textarea id="desc" type="text" class="mb-3" name="content" placeholder="Description" [(ngModel)]="note.content" style="resize: none;"></textarea>
-          <button type="submit" class="btn add shadow"><i class='bx bx-check fs-2'></i></button>
+        <form class="body form p-3 d-flex flex-column align-items-center justify-content-start"
+            (ngSubmit)="note.desc&&note.desc.length?addNote():updateNote()">
+            <input id="title" type="text" class="mb-3" name="title" placeholder="Title" [(ngModel)]="note.title">
+            <textarea id="desc" type="text" class="mb-3" name="content" placeholder="Description"
+                [(ngModel)]="note.content" style="resize: none;"></textarea>
+            <button type="submit" class="btn add shadow"><i class='bx bx-check fs-2'></i></button>
         </form>
-      </div>
-      
+    </div>
+
 </div>

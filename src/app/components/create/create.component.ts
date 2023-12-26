@@ -12,6 +12,7 @@ export class CreateComponent implements OnInit {
     title: '',
     content: '',
   };
+  noteId: any;
   constructor(
     private data: DataService,
     private route: Router,
@@ -19,10 +20,10 @@ export class CreateComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.aRoute.params.subscribe(async (params) => {
-      const noteId = params['id'];
-  
-      this.note = noteId
-        ? await this.data.getNote(noteId)
+      this.noteId = params['id'];
+
+      this.note = this.noteId
+        ? await this.data.getNote(this.noteId)
         : { title: '', content: '' };
     });
   }
@@ -33,6 +34,16 @@ export class CreateComponent implements OnInit {
       return;
     }
     this.data.addNote(this.note).then(() => {
+      this.route.navigate(['home']);
+    });
+    alert("add")
+  }
+  updateNote() {
+    if (this.note.content == '') {
+      alert('Please enter some text!');
+      return;
+    }
+    this.data.updateNote(this.note).then(() => {
       this.route.navigate(['home']);
     });
   }
