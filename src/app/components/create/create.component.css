@@ -19,7 +19,7 @@
   align-items: center;
   background-color: rgb(100, 100, 100);
   color: white;
-  position: fixed;
+  position: sticky;
   bottom: 30px;
   right: 520px;
   border: none;
