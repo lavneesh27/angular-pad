@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   ) {}
   notes: any;
   searchNote: string = '';
+  isDark:boolean = false;
   @ViewChild('sidebar') sidebar: ElementRef | undefined;
   ngOnInit(): void {
     this.data.getAllNotes().subscribe((res: any) => {
@@ -56,5 +57,8 @@ export class HomeComponent implements OnInit {
           );
         });
     });
+  }
+  darkMode(){
+    this.isDark = true;
   }
 }
