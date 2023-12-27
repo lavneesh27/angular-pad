@@ -29,11 +29,14 @@ export class DataService {
       let title = postDoc.get('title') || "";
       let desc = postDoc.get('desc') || "";
       let color = postDoc.get('color') || "";
+      let image = postDoc.get('image') || "";
+
       title = note.title;
       desc = note.desc||"";
       color = note.color||"";
+      image = note.image||"";
 
-      transaction.update(postRef, { title, desc, color });
+      transaction.update(postRef, { title, desc, color, image });
     });
   }
   unlikeTweet(tweet: any, userId: string) {

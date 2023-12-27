@@ -14,7 +14,9 @@
     <p *ngIf="notes && notes.length==0" class="text-muted text-center my-auto">You don't have any notes</p>
     <ng-container *ngIf="notes && notes.length">
       <div class="notes">
-        <div *ngFor="let note of notes" class="note" [ngStyle]="{ 'background-color': note.color }"  [routerLink]="['/create', note.id]" >
+        <div *ngFor="let note of notes" class="note" [ngStyle]="{
+          'background': !note.color ? 'url(' + note.image + ')  center/cover' : note.color
+      }" [routerLink]="['/create', note.id]">
           <div *ngIf="note.title && note.title.length" class="fs-5 fw-bold">{{note.title}}</div>
           <p>{{note.content}}</p>
         </div>

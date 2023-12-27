@@ -16,7 +16,7 @@ export class CreateComponent implements OnInit {
   };
   selectedColor: string = '';
   colors: any = [
-    '',
+    '#FFFFFF',
     '#FAAFA8',
     '#F39F76',
     '#FFF8B8',
@@ -25,8 +25,7 @@ export class CreateComponent implements OnInit {
     '#D4E4ED',
     '#AECCDC',
     '#D3BFDB',
-    '#F6E2DD',
-    '#E9E3D4',
+    '#F6E2DD'
   ];
   private modalService = inject(NgbModal);
   noteId: any;
@@ -83,6 +82,11 @@ export class CreateComponent implements OnInit {
     });
   }
   pickColor(color:string){
+    this.note.image='';
     this.note.color = color;
+  }
+  pickImage(index:any){
+    this.note.color='';
+    this.note.image = './assets/images/backgrounds/'+index+'.jpg';
   }
 }
