@@ -1,9 +1,32 @@
 <div class="container px-0">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary border">
-    <a class="navbar-item" style="cursor: pointer;"><i class='bx bx-menu fs-3'></i></a>
+  <nav class="navbar navbar-expand-lg  bg-body-tertiary border">
+    <!-- <a class="navbar-item" style="cursor: pointer;"><i class='bx bx-menu fs-3'></i></a> -->
     <div class="container-fluid d-flex justify-content-center">
       <a class="navbar-brand" href=javascript:void(0) routerLink="/home" style="cursor: pointer;">Angular Pad</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+
+<!-- 
+    <a class="navbar-item "  href=javascript:void(0) style="cursor: pointer;"><i class='bx bx-moon fs-3'></i></a> -->
+
   </nav>
   <div class="mx-2">
     <input type="text" class="form-control my-3" id="note" name="note" placeholder="Search your notes"
@@ -15,8 +38,8 @@
     <ng-container *ngIf="notes && notes.length">
       <div class="notes">
         <div *ngFor="let note of notes" class="note" [ngStyle]="{
-          'background': !note.color ? 'url(' + note.image + ')  center/cover' : note.color
-      }" [routerLink]="['/create', note.id]">
+        'background': !note.color ? 'url(' + note.image + ') center/cover'  : note.color,
+    }" [routerLink]="['/create', note.id]">
           <div *ngIf="note.title && note.title.length" class="fs-5 fw-bold">{{note.title}}</div>
           <p>{{note.content}}</p>
         </div>

@@ -53,6 +53,8 @@ export class CreateComponent implements OnInit {
     this.data.addNote(this.note).then(() => {
       this.route.navigate(['home']);
     });
+    console.log(this.note);
+    
   }
   updateNote() {
     if (this.note.content == '') {

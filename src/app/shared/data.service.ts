@@ -26,15 +26,15 @@ export class DataService {
         throw new Error('Post does not exist!');
       }
 
-      let title = postDoc.get('title') || "";
-      let desc = postDoc.get('desc') || "";
-      let color = postDoc.get('color') || "";
-      let image = postDoc.get('image') || "";
+      let title = postDoc.get('title') || '';
+      let desc = postDoc.get('desc') || '';
+      let color = postDoc.get('color') || '';
+      let image = postDoc.get('image') || '';
 
       title = note.title;
-      desc = note.desc||"";
-      color = note.color||"";
-      image = note.image||"";
+      desc = note.desc || '';
+      color = note.color || '';
+      image = note.image || '';
 
       transaction.update(postRef, { title, desc, color, image });
     });
@@ -67,7 +67,7 @@ export class DataService {
       }
     } catch (error) {
       console.error('There was an error getting your document:', error);
-      throw error; 
+      throw error;
     }
   }
 
@@ -89,28 +89,28 @@ export class DataService {
       if (doc.exists) {
         return doc.data();
       } else {
-        return null; 
+        return null;
       }
     } catch (error) {
       console.error('There was an error getting your document:', error);
-      throw error; 
+      throw error;
     }
   }
   updateUser(user: any) {
     this.afs.collection('/Users').doc(user.id).update({
       firstName: user.firstName,
       lastName: user.lastName,
-      bio:user.bio,
-      location:user.location,
-      website:user.website,
+      bio: user.bio,
+      location: user.location,
+      website: user.website,
       userName: user.userName,
       dob: user.dob,
-      image:user.image,
-      banner:user.banner
-    })
+      image: user.image,
+      banner: user.banner,
+    });
   }
 
-  follow(user1:string, user2:string){
+  follow(user1: string, user2: string) {
     const postRef = this.afs.collection('/Users').doc(user2).ref;
     const postRef2 = this.afs.collection('/Users').doc(user1).ref;
 
@@ -132,7 +132,7 @@ export class DataService {
     });
   }
 
-  unFollow(user1:string, user2:string) {
+  unFollow(user1: string, user2: string) {
     const postRef = this.afs.collection('/Users').doc(user2).ref;
     const postRef2 = this.afs.collection('/Users').doc(user1).ref;
 
@@ -158,7 +158,7 @@ export class DataService {
 
   addBookmark(bookmark: any) {
     bookmark.id = this.afs.createId();
-    
+
     return this.afs.collection('/Bookmarks').add(bookmark);
   }
   getAllBookmarks(id: number) {
