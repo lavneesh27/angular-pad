@@ -28,10 +28,12 @@ export class DataService {
 
       let title = postDoc.get('title') || "";
       let desc = postDoc.get('desc') || "";
+      let color = postDoc.get('color') || "";
       title = note.title;
       desc = note.desc||"";
+      color = note.color||"";
 
-      transaction.update(postRef, { title, desc });
+      transaction.update(postRef, { title, desc, color });
     });
   }
   unlikeTweet(tweet: any, userId: string) {
@@ -64,6 +66,10 @@ export class DataService {
       console.error('There was an error getting your document:', error);
       throw error; 
     }
+  }
+
+  deleteNote(note: any) {
+    return this.afs.collection('/Notes').doc(note.id).delete();
   }
 
   //user

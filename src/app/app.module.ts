@@ -17,7 +17,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { CreateComponent } from './components/create/create.component';
-import { NavComponent } from './components/nav/nav.component'
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "red",
@@ -28,7 +27,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "blur": 0,
   "delay": 0,
   "fastFadeOut": true,
-  "fgsColor": "#1d9bf0",
+  "fgsColor": "#646464",
   "fgsPosition": "center-center",
   "fgsSize": 40,
   "fgsType": "ball-spin-clockwise",
@@ -39,7 +38,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "masterLoaderId": "master",
   "overlayBorderRadius": "0",
   "overlayColor": "rgba(40,40,40,0)",
-  "pbColor": "#1d9bf0",
+  "pbColor": "#646464",
   "pbDirection": "ltr",
   "pbThickness": 3,
   "hasProgressBar": true,
@@ -56,7 +55,6 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     HomeComponent,
     LoginComponent,
     CreateComponent,
-    NavComponent
   ],
   imports: [
     BrowserModule,

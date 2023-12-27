@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { DataService } from '../../shared/data.service';
 
 @Component({
@@ -17,6 +16,7 @@ export class HomeComponent implements OnInit {
   ) {}
   notes: any;
   searchNote: string = '';
+  @ViewChild('sidebar') sidebar: ElementRef | undefined;
   ngOnInit(): void {
     this.data.getAllNotes().subscribe((res: any) => {
       this.notes = res.map(
@@ -50,8 +50,6 @@ export class HomeComponent implements OnInit {
           }
         )
         .filter((note: any) => {
-          const title = note.title || ''; // Ensure title is defined
-          const content = note.content || ''; // Ensure content is defined
           return (
             note.title.toLowerCase().includes(searchText.toLowerCase()) ||
             note.content.toLowerCase().includes(searchText.toLowerCase())
