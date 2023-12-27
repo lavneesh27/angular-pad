@@ -27,7 +27,6 @@ export class CreateComponent implements OnInit {
     '#D3BFDB',
     '#F6E2DD',
     '#E9E3D4',
-    '#EFEFF1',
   ];
   private modalService = inject(NgbModal);
   noteId: any;
@@ -82,5 +81,8 @@ export class CreateComponent implements OnInit {
       size: 'sm',
       windowClass: 'dark-modal',
     });
+  }
+  pickColor(color:string){
+    this.note.color = color;
   }
 }

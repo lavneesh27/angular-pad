@@ -69,8 +69,8 @@
 .dropdown-item{
   cursor: pointer;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
+  font-size: larger;
 }
 .dropdown-menu,#color{
   border: none;
@@ -81,4 +81,15 @@
   width: 30px;
   height: 30px;
   border: none;
+  margin: 5px;
+  cursor: pointer;
+  border: 0.5px solid rgba(150, 150, 150, 0.7)
+}
+.picker{
+  background-color: transparent;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }

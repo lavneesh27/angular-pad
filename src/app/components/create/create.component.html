@@ -6,8 +6,7 @@
             <a class="navbar-brand d-flex justify-content-center align-items-center" type="button"
                 data-bs-toggle="dropdown" style="cursor: pointer;"><i class='bx bx-dots-vertical-rounded fs-3 '></i></a>
             <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" (click)="open(color)"><i class='bx bxs-brush fs-5'></i>&nbsp; Change
-                        Color</a>
+                <li><a class="dropdown-item" (click)="open(color)"><i class='bx bxs-brush fs-5'></i>&nbsp; Change Color</a>
                 </li>
                 <li><a class="dropdown-item" (click)="open(content)"><i class='bx bxs-trash fs-5'
                             style="color: red;"></i>&nbsp; Delete Note</a>
@@ -16,6 +15,13 @@
         </div>
     </nav>
     <div [ngStyle]="{ 'background-color': note.color  }">
+        <div>
+            <ul class="picker">
+                <li *ngFor="let color of colors">
+                    <div *ngIf="color" class="pick" [ngStyle]="{ 'background-color': color }" (click)="pickColor(color)" ></div>
+                </li>
+            </ul> 
+        </div>
         <form class="body form p-3 d-flex flex-column align-items-center justify-content-start"
             (ngSubmit)="note.desc&&note.desc.length?addNote():updateNote()">
             <input id="title" type="text" class="mb-3" name="title" placeholder="Title" [(ngModel)]="note.title">
@@ -44,11 +50,11 @@
         <div class="text-center"><i class="bx bxs-brush text-center fs-1 mb-3"></i></div>
         <h3>Pick a color</h3>
 
-        <select class="form-select my-3" aria-label="color" name="color" [(ngModel)]="note.color">
+        <!-- <select class="form-select my-3" aria-label="color" name="color" [(ngModel)]="note.color">
             <option *ngFor="let color of colors" [ngStyle]="{ 'background-color': color }" value="{{color}}">
                 {{color}}
             </option>
-        </select>
+        </select> -->
         <div class="d-flex justify-content-around">
             <button class="btn btn-dark mb-2" (click)="updateNote()">Change</button>
             <button class="btn btn-outline-dark mb-2" (click)="modal.dismiss()">Cancel</button>
