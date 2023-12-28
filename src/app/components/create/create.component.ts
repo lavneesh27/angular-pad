@@ -82,7 +82,7 @@ export class CreateComponent implements OnInit {
       ariaLabelledBy: 'modal-basic-title',
       centered: true,
       size: 'sm',
-      windowClass: 'dark-modal',
+      windowClass: '',
     });
   }
   pickColor(color:string){
