@@ -9,6 +9,7 @@
   display: flex;
   align-items: start;
   justify-content: center;
+ 
 }
 .add {
   border-radius: 15px;
@@ -108,4 +109,5 @@
 
 .picker::-webkit-scrollbar {
   display: none;
+  background-blend-mode: hue;
 }

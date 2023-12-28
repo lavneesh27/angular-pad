@@ -27,16 +27,16 @@ export class DataService {
       }
 
       let title = postDoc.get('title') || '';
-      let desc = postDoc.get('desc') || '';
+      let content = postDoc.get('content') || '';
       let color = postDoc.get('color') || '';
       let image = postDoc.get('image') || '';
 
-      title = note.title;
-      desc = note.desc || '';
+      title = note.title || '';
+      content = note.content || '';
       color = note.color || '';
       image = note.image || '';
 
-      transaction.update(postRef, { title, desc, color, image });
+      transaction.update(postRef, { title, content, color, image });
     });
   }
   unlikeTweet(tweet: any, userId: string) {
