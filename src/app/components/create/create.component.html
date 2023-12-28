@@ -16,17 +16,16 @@
                             *ngIf="note.color==color" class='bx bx-check fs-3 text-secondary'></i></div>
                 </li>
             </ul>
-            <ul class="picker">
+            <ul class="picker px-3">
                 <li *ngFor="let i of [1, 2, 3, 4, 5, 6]">
                     <div class="pick-img"
                         [ngStyle]="{ 'background': 'url(./assets/images/backgrounds/' + i + '.jpg) center/cover'}"
                         (click)="pickImage(i)"></div>
                 </li>
-
             </ul>
         </div>
         <form class="body form p-3 d-flex flex-column align-items-center justify-content-start"
-            (ngSubmit)="note.desc&&note.desc.length?addNote():updateNote()">
+            (ngSubmit)="noteId?updateNote():addNote()">
             <input id="title" type="text" class="mb-3" name="title" placeholder="Title" [(ngModel)]="note.title">
             <textarea id="desc" type="text" class="mb-3" name="content" placeholder="Description"
                 [(ngModel)]="note.content" style="resize: none;"></textarea>

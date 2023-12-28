@@ -35,13 +35,15 @@ export class CreateComponent implements OnInit {
     private aRoute: ActivatedRoute,
     private _location: Location,
   ) {}
-  ngOnInit() {
+  async ngOnInit() {
     this.aRoute.params.subscribe(async (params) => {
       this.noteId = params['id'];
 
-      this.note = this.noteId
-        ? await this.data.getNote(this.noteId)
-        : { title: '', content: '' };
+      if (this.noteId) {
+        this.note = await this.data.getNote(this.noteId);
+      } else {
+        this.note = { title: '', content: '' };
+      }
     });
   }
 
@@ -71,8 +73,8 @@ export class CreateComponent implements OnInit {
   }
   delete() {
     this.data.deleteNote(this.note).then(() => {
-      alert('deleted');
       this.route.navigate(['home']);
+      this.modalService.dismissAll();
     });
   }
   open(content: TemplateRef<any>) {

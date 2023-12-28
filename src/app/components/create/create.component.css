@@ -51,8 +51,6 @@
   border: none;
   width: 350px;
   border-bottom: 1px solid rgb(100, 100, 100);
-}
-#title {
   font-weight: bold;
   font-size: 25px;
 }
@@ -84,7 +82,10 @@
   border: none;
   margin: 5px;
   cursor: pointer;
-  border: 1px solid rgba(150, 150, 150, 0.7)
+  border: 1px solid rgba(150, 150, 150, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .pick-img{
   border-radius: 10px;
@@ -99,7 +100,6 @@
   background-color: transparent;
   list-style: none;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   padding: 0;
   overflow-x: scroll;
